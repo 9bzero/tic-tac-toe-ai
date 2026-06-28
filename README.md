@@ -1,41 +1,23 @@
-# Tic-Tac-Toe AI
+# tic-tac-toe-ai
 
-Tic-Tac-Toe with an **unbeatable AI** powered by the Minimax algorithm — you cannot win.
+Tic-tac-toe with an unbeatable AI. You will not win. Best case is a draw.
 
-## How the AI works
+## The AI
 
-The AI uses **Minimax** with alpha-beta pruning to search the full game tree and always pick the optimal move. Against a perfect player, the game always ends in a draw. Against any mistake, the AI wins.
+Uses Minimax with alpha-beta pruning. The algorithm explores every possible game state, assumes the opponent plays optimally, and picks the move that leads to the best guaranteed outcome. On a 3×3 board the game tree is small enough that this is instant.
 
-```
-Minimax(board, depth, isMaximizing):
-  if terminal state → return score
-  if maximizing:
-    return max(Minimax(child, depth+1, false)) for each move
-  else:
-    return min(Minimax(child, depth+1, true)) for each move
-```
+Scores: AI win = +10, AI loss = -10, draw = 0. Depth is subtracted/added to prefer winning sooner and losing later.
 
 ## Features
 
-- Human vs AI mode
-- Human vs Human mode
-- Move history with undo
-- Win/draw/loss score tracker
-- Animated winning line highlight
+- Play as X or O
+- Adjustable difficulty: Easy (random moves), Medium (one-level lookahead), Hard (full Minimax)
+- Move history
+- Score tracker across sessions (localStorage)
 
-## Stack
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61dafb?style=flat&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646cff?style=flat&logo=vite&logoColor=white)
-
-## Run locally
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
-
----
-
-Made by [9bzero](https://github.com/9bzero)
