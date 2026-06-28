@@ -1,18 +1,41 @@
-# tic-tac-toe-ai
+# Tic-Tac-Toe AI
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+Tic-Tac-Toe with an **unbeatable AI** powered by the Minimax algorithm — you cannot win.
 
-> Tic-Tac-Toe with unbeatable AI using the minimax algorithm
+## How the AI works
 
-## Features
-- 🤖 Unbeatable AI via minimax (hard mode)
-- 🎲 Easy random AI mode
-- 👥 2-player local mode
-- 📊 Score tracker
+The AI uses **Minimax** with alpha-beta pruning to search the full game tree and always pick the optimal move. Against a perfect player, the game always ends in a draw. Against any mistake, the AI wins.
 
-```bash
-npm install && npm run dev
+```
+Minimax(board, depth, isMaximizing):
+  if terminal state → return score
+  if maximizing:
+    return max(Minimax(child, depth+1, false)) for each move
+  else:
+    return min(Minimax(child, depth+1, true)) for each move
 ```
 
-## License
-[MIT](LICENSE)
+## Features
+
+- Human vs AI mode
+- Human vs Human mode
+- Move history with undo
+- Win/draw/loss score tracker
+- Animated winning line highlight
+
+## Stack
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61dafb?style=flat&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646cff?style=flat&logo=vite&logoColor=white)
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+Made by [9bzero](https://github.com/9bzero)
